@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Revision on Git and GitHub - Sameen Chand</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: #0f172a;
+        }
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #1e293b;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            border: 1px solid #334155;
+        }
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #60a5fa;
+        }
+        .blog-title {
+            font-size: 2.5rem;
+            color: #f1f5f9;
+            margin-bottom: 1rem;
+        }
+        .blog-meta {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #93c5fd;
+        }
+        .blog-content h3 {
+            color: #f1f5f9;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #60a5fa;
+            padding-bottom: 0.5rem;
+        }
+        .blog-content h4 {
+            color: #e2e8f0;
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.25rem;
+            background: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #60a5fa;
+        }
+        .blog-content h5 {
+            color: #cbd5e1;
+            margin: 1.25rem 0 0.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .blog-content p {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .blog-content code {
+            background: #0f172a;
+            color: #34d399;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            display: block;
+            margin: 0.75rem 0;
+            white-space: pre-wrap;
+            border: 1px solid #334155;
+            border-left: 4px solid #60a5fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .blog-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .blog-content li {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .command-section {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .command-section h4 {
+            margin-top: 0;
+            background: none;
+            padding: 0;
+            border: none;
+            color: #60a5fa;
+        }
+        .blog-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        .blog-content li {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Sameen Chand</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#blog" class="nav-link">Blog</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blog-page">
+        <div class="container">
+            <a href="index.html#blog" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Blog
+            </a>
+            
+            <div class="blog-container">
+                <div class="blog-header">
+                    <h1 class="blog-title">Quick Revision on Git and GitHub Commands</h1>
+                </div>
+                
+                <div class="blog-content">
+                    <p><strong>A comprehensive guide for developers and students learning version control</strong></p>
+                    
+                    <blockquote style="background: #1e40af; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #60a5fa; margin: 2rem 0; font-style: italic;">
+                        "Version control is the foundation of modern software development. Whether you're working on a personal project or collaborating in a large team, understanding Git and GitHub helps you track, manage, and share your code effectively."
+                    </blockquote>
+                    
+                    <h3>🔹 Introduction</h3>
+                    <p>This quick revision guide covers the most essential Git and GitHub commands every developer should know.</p>
+                    <p>I originally compiled these commands for my own use while learning version control — written in simple, natural language to ensure clarity. Over time, they've become my go-to reference whenever I need a quick refresher.</p>
+                    <p><strong>Let's dive in 👇</strong></p>
+                    
+                    <h3>⚙️ Git Basics</h3>
+                    
+                    <div class="command-section">
+                        <h4>✅ Check Git Version</h4>
+                        <p>Make sure Git is installed and check its version:</p>
+                        <code>git --version</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🧩 Configure Git</h4>
+                        <p>Set up your username and email (these appear in your commits):</p>
+                        <code>git config --global user.name "Your Name"</code>
+                        <code>git config --global user.email "your@email.com"</code>
+                        <p>View your configuration:</p>
+                        <code>git config --list</code>
+                    </div>
+
+                    <h3>📁 Local Repository Management</h3>
+                    
+                    <div class="command-section">
+                        <h4>🏗️ Initialize a Repository</h4>
+                        <p>Create a new Git repository in your project folder:</p>
+                        <code>git init</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🔍 Check Repository Status</h4>
+                        <p>View changes, staged files, and untracked files:</p>
+                        <code>git status</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>➕ Add Files</h4>
+                        <p>Add specific files or all files to the staging area:</p>
+                        <code>git add filename</code>
+                        <code>git add .</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>💾 Commit Changes</h4>
+                        <p>Save staged changes with a descriptive message:</p>
+                        <code>git commit -m "Your message here"</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🌿 Branch Information</h4>
+                        <p>View all branches or see which branch you're on:</p>
+                        <code>git branch</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>📜 View Commit History</h4>
+                        <p>List all commits:</p>
+                        <code>git log</code>
+                    </div>
+                    
+                    <h3>🧮 Working with File Versions</h3>
+                    
+                    <div class="command-section">
+                        <h4>🧐 Compare Changes</h4>
+                        <p>Compare modified files before committing:</p>
+                        <code>git diff</code>
+                        <p>Compare staged files:</p>
+                        <code>git diff --cached</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🕓 View Previous File Versions</h4>
+                        <p>See the content of a file in a previous commit:</p>
+                        <code>git show commit-id:filename</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🔁 Switch Between Versions</h4>
+                        <p>Checkout an older version and return to current:</p>
+                        <code>git checkout commit-id -- filename</code>
+                        <code>git checkout branch-name -- filename</code>
+                    </div>
+                    
+                    <h3>🔧 Undoing Changes</h3>
+                    
+                    <div class="command-section">
+                        <h4>🧹 Restore Unstaged Changes</h4>
+                        <p>Undo changes before staging:</p>
+                        <code>git restore filename</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🧱 Restore Staged Changes</h4>
+                        <p>Undo files added with git add:</p>
+                        <code>git restore --staged filename</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>⏪ Reset Committed Changes</h4>
+                        <p>Undo commits:</p>
+                        <code>git reset --soft HEAD^    # Uncommit but keep changes</code>
+                        <code>git reset --hard HEAD^    # Uncommit and delete changes</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>💾 Stash Temporary Changes</h4>
+                        <p>Save changes temporarily without committing:</p>
+                        <code>git stash                    # Save current changes</code>
+                        <code>git stash push -m "message"  # Save with message</code>
+                        <p>Retrieve stashed changes:</p>
+                        <code>git stash pop               # Apply and remove latest stash</code>
+                        <code>git stash apply             # Apply but keep stash</code>
+                        <p>Manage stashes:</p>
+                        <code>git stash list              # View all stashes</code>
+                        <code>git stash drop              # Delete latest stash</code>
+                    </div>
+
+                    <h3>🕰️ Git Logs & History</h3>
+                    
+                    <div class="command-section">
+                        <h4>View your project's commit history in different formats:</h4>
+                        <code>git log -p -2          # Last two commits with diff</code>
+                        <code>git log --stat         # Summary of changes</code>
+                        <code>git log --pretty=oneline</code>
+                        <code>git log --pretty=format:"%h - %an, %ar : %s"</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🔎 Search Within Logs</h4>
+                        <p>Find specific commits:</p>
+                        <code>git log -S function_name</code>
+                        <code>git log --grep="keyword"</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🗓️ Filter by Time or Author</h4>
+                        <code>git log --since="2024-01-01"</code>
+                        <code>git log --author="Sameen"</code>
+                        <code>git log --no-merges</code>
+                    </div>
+
+                    <h3>☁️ Remote Repository Management (GitHub)</h3>
+                    
+                    <div class="command-section">
+                        <h4>🌐 Link Local Repo to Remote</h4>
+                        <code>git remote add origin remote_URL</code>
+                        <code>git branch -M main</code>
+                        <code>git push -u origin main</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🚀 Push & Pull</h4>
+                        <p>Push your commits:</p>
+                        <code>git push</code>
+                        <p>Pull updates from the remote repo:</p>
+                        <code>git pull</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>📦 Clone a Repository</h4>
+                        <code>git clone repo_URL</code>
+                        <p><em>This downloads the repo and full commit history to your local machine.</em></p>
+                    </div>
+
+                    <h3>🌿 Branching & Merging</h3>
+                    
+                    <div class="command-section">
+                        <h4>🔧 Branch Management</h4>
+                        <p>Create and switch to a new branch (modern way):</p>
+                        <code>git switch -c new-branch</code>
+                        <p>Or the traditional way:</p>
+                        <code>git branch new-branch</code>
+                        <code>git checkout new-branch</code>
+                        <p>Switch between existing branches:</p>
+                        <code>git switch branch-name</code>
+                        <code>git checkout branch-name</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🔄 Merge Branches</h4>
+                        <code>git checkout main</code>
+                        <code>git merge feature-branch</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🔄 Rebase (Alternative to Merge)</h4>
+                        <p>Rebase replays commits on top of another branch (creates linear history):</p>
+                        <code>git checkout feature-branch</code>
+                        <code>git rebase main</code>
+                        <p>Interactive rebase (edit commit history):</p>
+                        <code>git rebase -i HEAD~3    # Rebase last 3 commits</code>
+                        <p><em>Rebase vs Merge: Rebase creates cleaner history but rewrites commit history. Use merge for shared branches.</em></p>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>⚠️ Handling Merge Conflicts</h4>
+                        <p><em>If the same file is edited differently in two branches, Git will flag a merge conflict. You'll need to manually resolve it, save, and commit again.</em></p>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🍒 Cherry-Pick Commits</h4>
+                        <p>Apply specific commits from one branch to another:</p>
+                        <code>git cherry-pick commit-hash</code>
+                        <p>Cherry-pick multiple commits:</p>
+                        <code>git cherry-pick commit1 commit2 commit3</code>
+                        <p>Cherry-pick a range of commits:</p>
+                        <code>git cherry-pick start-commit^..end-commit</code>
+                        <p><em>Useful for applying hotfixes or specific features to different branches.</em></p>
+                    </div>
+
+                    <h3>🧭 GitHub Workflow</h3>
+                    
+                    <div class="command-section">
+                        <h4>🍴 Forking and Pull Requests</h4>
+                        <p><strong>On GitHub:</strong></p>
+                        <ul>
+                            <li>Click <strong>Fork</strong> to create your own copy of a repo.</li>
+                            <li>Make your changes locally.</li>
+                            <li>Push your updates to your forked repo.</li>
+                            <li>Open a <strong>Pull Request (PR)</strong> to suggest merging your changes into the original repository.</li>
+                        </ul>
+                        <p><em>This is the core of open-source collaboration.</em></p>
+                    </div>
+                    
+                    <h3>🧹 Git Utilities</h3>
+                    
+                    <div class="command-section">
+                        <h4>🪄 .gitignore</h4>
+                        <p>Exclude files or folders from version control:</p>
+                        <code># Example .gitignore
+node_modules/
+.env
+__pycache__/</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🧽 Clean Untracked Files</h4>
+                        <code>git clean -n   # Preview</code>
+                        <code>git clean -f   # Delete untracked files</code>
+                    </div>
+                    
+                    <div class="command-section">
+                        <h4>🏷️ Tags (Versioning)</h4>
+                        <p>Create and manage version tags:</p>
+                        <code>git tag -a v1.0 -m "Initial release"</code>
+                        <code>git push origin --tags</code>
+                        <p>Delete tags:</p>
+                        <code>git tag -d tag_name</code>
+                        <code>git push origin --delete tag_name</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
